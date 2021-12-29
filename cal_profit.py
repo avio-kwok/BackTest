@@ -5,6 +5,7 @@ import pandas as pd
 trades= pd.read_csv('trades(basic MACD)')
 data=pd.DataFrame(columns=['money', 'position'])
 # having 100 usd as initial value
+# using 70% of funding to trade
 money= 200
 position= 0
 data= data.append({'money':"{:.2f}".format(money),'position': "{:.2f}".format(position)},ignore_index=True)

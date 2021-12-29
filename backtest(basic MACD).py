@@ -1,14 +1,15 @@
 #for backtest
 import pandas, talib
+import requests
 
 #download csv from web
-#csv_url = 'https://www.cryptodatadownload.com/cdd/FTX_BTCUSD_minute.csv'
-#req= requests.get(csv_url)
-#url_content= req.content
-#csv_file= open('his_data','wb')
-#print(csv_url)
-#csv_file.write(url_content)
-#csv_file.close
+csv_url = 'https://www.cryptodatadownload.com/cdd/FTX_BTCUSD_minute.csv'
+req= requests.get(csv_url)
+url_content= req.content
+csv_file= open('his_data','wb')
+print(csv_url)
+csv_file.write(url_content)
+csv_file.close
 
 # import historical data
 hp = pandas.read_csv('his_data')
@@ -58,6 +59,3 @@ for i in range(len(hp)):
 print(data.head())
 print(data.tail())
 data.to_csv('outcome')
-# testing
-
-# output result
