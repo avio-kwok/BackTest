@@ -13,7 +13,15 @@ csv_file.close
 
 # import historical data
 hp = pandas.read_csv('his_data')
-#print(hp.head())
+print(hp.head(6))
+print(hp.tail(6))
+#for 5 min time frame
+i=0
+hp_5m=pandas.DataFrame
+while i<=len(hp):
+    hp_5m=hp_5m.append(hp[i],ignore_index=True)
+print(hp_5m.head(2))
+print(hp.tail(2))
 
 # analyis data
 hp['MACD'], hp['MACDsignal'], hp['MACDhist'] = talib.MACD(hp['close'], fastperiod=12, slowperiod=26, signalperiod=9)
